@@ -1,0 +1,57 @@
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width"/>
+<meta name="author" content="Enliven Applications"/>
+<meta name="generator" content="Streams Platform"/>
+
+<!-- Facebook Meta Tags -->
+<meta property="og:image" content=""/>
+<meta property="og:title" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content=""/>
+<meta property="og:type" content="website"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>
+    {{ setting_get('streams::name', trans('distribution::name')) }}
+    -
+    {{ setting_get('streams::description', trans('distribution::description')) }}
+</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ image_url('theme::img/favicon.png') }}"/>
+
+<!-- CSS -->
+{#  add CSS to asset_path into theme.css for caching #}
+{{ asset_add("theme.css", "theme::css/bootstrap.min.css") }}
+{{ asset_add("theme.css", "theme::css/font-awesome.css") }}
+{{ asset_add("theme.css", "theme::css/theme/*") }}
+
+{# combine all css files #}
+{{ html_style(asset_path("theme.css")) }}
+
+{# compile CSS for caching #}
+{% for path in asset_paths("styles.css") %}
+    {{ html_style(path) }}
+{% endfor %}
+
+
+<!-- JS -->
+{# add JS to asset_path into theme.js for caching #}
+{{ asset_add("theme.js", "theme::js/jquery-1.11.1.js") }}
+{{ asset_add("theme.js", "theme::js/modernizr.js") }}
+{{ asset_add("theme.js", "theme::js/bootstrap/*") }}
+{{ asset_add("theme.js", "theme::js/theme/*") }}
+
+{# combine all js files #}
+{{ html_script(asset_path("theme.js")) }}
+
+{# compile JS for caching #}
+{% for path in asset_paths("scripts.js") %}
+    {{ html_script(path) }}
+{% endfor %}

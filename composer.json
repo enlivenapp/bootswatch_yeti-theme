@@ -1,0 +1,46 @@
+{
+    "name": "enlivenapp/bootswatch_yeti-theme",
+    "type": "streams-addon",
+    "description": "The Bootswatch Yeti theme for PyroCMS v3.",
+    "keywords": [
+        "theme",
+        "streams",
+        "bootstrap",
+        "bootswatch",
+        "yeti",
+        "laravel",
+        "pyrocms"
+    ],
+    "homepage": "http://enlivenapp.com/",
+    "version": "1.0.0-dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
+        },
+        {
+            "name": "Enliven Applications",
+            "email": "mw@enlivenapp.com",
+            "homepage": "http://enlivenapp.com",
+            "role": "Owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Enlivenapp\\BootswatchYetiTheme\\": "src/"
+        }
+    },
+    "support": {
+        "email": "mw@enlivenapp.com",
+        "issues": "https://github.com/enlivenapp/bootswatch_yeti-theme/issues"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "stable"
+}
